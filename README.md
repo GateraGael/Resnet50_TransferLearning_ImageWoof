@@ -1,35 +1,49 @@
-# YouTube Trending Data Analysis Machine Learning Project
-This project was created in order try various Machine Learning models on Youtube's Trending video statistics obtained from Kaggle for educational purposes. The main dataset used in this project is the one from the United States last updated on December 5th 2021.
-Datasets from various countries can be downloaded and retrieved from: [YouTube Trending Video Dataset (updated daily)](https://www.kaggle.com/rsrishav/youtube-trending-video-dataset)
+# ResNet50 Transfer Learning Exercise
 
-![Youtube Trending Statistics](https://www.galaxymarketing.global/wp-content/uploads/2020/01/Youtube-Statistics-1536x753.png)
-Image retrieved from: [Galaxy Marketing YouTube Stats](https://www.galaxymarketing.global/youtube/youtube-statistics-that-you-need-to-know-in-2020/)
+In this repository, I'll be doing a transfer learning exercise with ResNet 50 model to train on the Imagewoof dataset using Tensorflow.
+
+Source of Data: [ImageWoof-320px](	https://s3.amazonaws.com/fast-ai-imageclas/imagewoof-320.tgz)
+
+![Dog Pics](image_wof.png)
 
 # Table of contents
-1. [Introduction](#Introduction)
+1. [ResNetIntro](#ResNetIntro)
     1. [USA Dataset](#USA_dataset)
     2. [Test with Colab Notebook](#ColabNotebook)
 
 
-## Introduction <a name="Introduction"></a>
-This dataset was created using a webscraper that used the [Youtube Data API](https://developers.google.com/youtube/registering_an_application), which is now a part of Google Cloud Platform. The scraper itself can be found at the following link: https://github.com/mitchelljy/Trending-YouTube-Scraper. The dataset that is updated daily is at the following kaggle site [YouTube Trending Video Dataset (updated daily)](https://www.kaggle.com/rsrishav/youtube-trending-video-dataset).
+## ResNetIntro <a name="ResNet Intro"></a>
 
-The scrapper can create useable data in the from '.csv' files for different countries. Every single dataset comes with a column called category_id which is different for every region (there are a total of five regions in the dataset) most likely corresponding to:
-1. Americas (North and South America)
-2. Europe
-3. Africa
-4. Asia
-5. Australia
+Just a quick background on Residual Neural Networks (ResNets), these are Deep Neural Networks there were introduced in 2015 by Kaiming He, Xiangyu Zhang, Shaoqing Ren and Jian Sun in their paper “Deep Residual Learning for Image Recognition” [Deep Residual Learning for Image Recognition](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf). 
 
-Each file comes with a 'JSON' file in which users can retrieve the corresponding caterogry id's. An example of a category is music. I'll initially start with creating models with just data from the United States. Then potentially test on data from other countries to see if the models are consitent.
+The field of computer vision saw multiple breakthrough as researchers trended towards making deeper and deeper neural netwroks such as AlexNet [ImageNet Classification with Deep Convolutional Neural Networks](https://papers.nips.cc/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf) and others, per the following blog post [Introduction to Resnet or Residual Network](https://www.mygreatlearning.com/blog/resnet/) this came with an overhead in difficulty training these deep models with accuracy starting to saturate and degrade.
 
-### USA Dataset<a name="USA_dataset"></a>
+An example of the aformentioned is from the graph below:
 
-The csv file has 95391 rows and 16 columns. The category id's json file creates an additional column. I then created the following:
-* 'category' descriptive qualitative representations of the 'categoryId'
-* 'trending_date_dt' python datetime version of the 'trending date'
-* 'published_date' python datetime version of the 'publishedAt'
-* 'time_till_trending' python datetime version of the 'trending_date_dt'
+![](resnet56_20layers.png)
+
+As quoted "Training error (left) and test error (right) on CIFAR-10with 20-layer and 56-layer “plain” networks. The deeper networkhas higher training error, and thus test error."
+
+
+## ImageWoof Dataset<a name="DataSet"></a>
+
+Per the following link [Papers With Code Image Woof](https://paperswithcode.com/dataset/imagewoof), Imagewoff is a subset of 10 dog breed classes from Imagenet. The breeds are: Australian terrier, Border terrier, Samoyed, Beagle, Shih-Tzu, English foxhound, Rhodesian ridgeback, Dingo, Golden retriever, Old English sheepdog. Therefore we will be expecting to create a 10 class classification problem with 10 neurons in the output layer.
+
+
+## Naming the classes to be human readable
+
+In the dataset we have the 10 classes, however they are all code names that are not necessarily interpretable therefore will create a separate directory that has them with correct labels.
+
+* 'Australian terrier' - n02093754
+* 'Beagle' - n02088364
+* 'Border terrier' - n02096294
+* 'Dingo' - n02115641
+* 'English foxhound' - n02089973
+* 'Golden retriever'- n02099601
+* 'Old English sheepdog' - n02105641  
+* 'Rhodesian ridgeback' - n02087394 
+* 'Shih-Tzu' - n02086240 
+* 'Samoyed' - n02111889 
 
 <!--
 see how to make table of contents in markdown: https://stackoverflow.com/questions/11948245/markdown-to-create-pages-and-table-of-contents
@@ -49,9 +63,4 @@ This is a sub paragraph, formatted in heading 3 style
 ## Another paragraph <a name="paragraph2"></a>
 The second paragraph text
 -->
-
-
-
-
-
 
