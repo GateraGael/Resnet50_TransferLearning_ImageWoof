@@ -6,11 +6,6 @@ Source of Data: [ImageWoof-320px](https://s3.amazonaws.com/fast-ai-imageclas/ima
 
 ![Dog Pics](image_wof.png)
 
-# Table of contents
-1. [ResNetIntro](#ResNetIntro)
-    1. [USA Dataset](#USA_dataset)
-    2. [Test with Colab Notebook](#ColabNotebook)
-
 
 ## ResNetIntro <a name="ResNet Intro"></a>
 Just a quick background on Residual Neural Networks (ResNets), these are Deep Neural Networks there were introduced in 2015 by Kaiming He, Xiangyu Zhang, Shaoqing Ren and Jian Sun in their paper “Deep Residual Learning for Image Recognition” [Deep Residual Learning for Image Recognition](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf). 
@@ -61,6 +56,7 @@ Test accuracy : (14.57%) - 0.1458333283662796
 
 <img src="./Results/Trial1/Trial1_Loss_0.01.jpeg" width="324" height="240">
 
+
 ## Trial 2
 Batch Size = 32
 Dense Layer Activation Function - 'Softmax'
@@ -79,6 +75,7 @@ Test accuracy : (72.91%) - 0.7291666865348816
 <img src="./Results/Trial2/Trial2_LC_0.01.jpeg" width="324" height="240">
 
 <img src="./Results/Trial2/Trial2_FineTuned.jpeg" width="324" height="240">
+
 
 ## Trial 3
 Batch Size = 32
@@ -138,22 +135,8 @@ Test accuracy : (86.27%) - 0.8627451062202454
 <img src="./Results/Trial5/CM_Trial5.jpeg" width="324" height="240">
 
 
-<!--
-see how to make table of contents in markdown: https://stackoverflow.com/questions/11948245/markdown-to-create-pages-and-table-of-contents
+## GradCam
+<img src="gradcam.png" width="324" height="240">
 
-2. [Some paragraph](#paragraph1)
-    1. [Sub paragraph](#subparagraph1)
-3. [Another paragraph](#paragraph2)
--->
 
-<!--
-## Some paragraph <a name="paragraph1"></a>
-The first paragraph text
-
-### Sub paragraph <a name="subparagraph1"></a>
-This is a sub paragraph, formatted in heading 3 style
-
-## Another paragraph <a name="paragraph2"></a>
-The second paragraph text
--->
 
