@@ -112,7 +112,7 @@ Test accuracy : (85.35%) - 0.853515625
 
 #### Learning Curves
 <img src="./Results/Trial4/Trial4_LC_0.0001.jpeg" width="324" height="240">
-
+<img src="./Results/Trial4/Trial4_FineTuned.jpeg" width="324" height="240">
 
 ## Trial 5
 Batch Size = 10
